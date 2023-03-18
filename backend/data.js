@@ -17,7 +17,7 @@ const data = {
       name: 'Gold-Heart-ring',
       slug: 'gold-heart-ring',
       category: 'rings',
-      image: '/images/ring2.jpg',
+      image:'/images/ring2.jpg',
       price: '2,643.00',
       qualit: '916',
       rating: '3.0',
