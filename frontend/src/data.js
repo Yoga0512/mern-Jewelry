@@ -3,6 +3,7 @@ const data = {
     {
       id: '001',
       name: 'Gold-Floral-ring',
+      slug: 'gold-floral-ring',
       category: 'rings',
       image: require('./images/ring1.jpg'),
       price: '3,647.00',
@@ -14,6 +15,7 @@ const data = {
     {
       id: '002',
       name: 'Gold-Heart-ring',
+      slug: 'gold-heart-ring',
       category: 'rings',
       image: require('./images/ring2.jpg'),
       price: '2,643.00',
@@ -25,6 +27,7 @@ const data = {
     {
       id: '003',
       name: 'Gold-Daisy-ring',
+      slug: 'gold-daisy-ring',
       category: 'rings',
       image: require('./images/ring3.jpg'),
       price: '1,999.00',
@@ -36,6 +39,7 @@ const data = {
     {
       id: '004',
       name: 'Gold-Ohm-ring',
+      slug: 'gold-ohm-ring',
       category: 'rings',
       image: require('./images/ring4.jpg'),
       price: '2,999.00',
