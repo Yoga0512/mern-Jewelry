@@ -1,5 +1,5 @@
 import {BrowserRouter,Routes,Route,Link} from 'react-router-dom';
-import HomeScreen from './components/HomeScree';
+import HomeScreen from './components/HomeScreen';
 import ProductScreen from './components/ProductScreen';
 function App() {
   return (
