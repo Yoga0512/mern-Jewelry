@@ -39,8 +39,13 @@
    6. update App.js
 10. Create Product and Rating Component
 11. Create Rating Component
-12. Create Product Component
-13. Use Rating Component in Product component
-14. Create Product Details Screen
-15. fetch product from backend
-16. create 3 columns for image,info and action
+    1. Create Product Component
+    2. Use Rating Component in Product component
+12. Create Product Details Screen
+    1. fetch product from backend
+    2. create 3 columns for image,info and action
+13. Create Loading and message component
+    1. create loading component
+    2. use spinner component
+    3. create message component
+    4. create utils.js to define getError function
