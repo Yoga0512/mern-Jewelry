@@ -3,7 +3,7 @@ import { useContext, useEffect, useReducer } from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ListGroup from 'react-bootstrap/ListGroup';
-import {  useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Rating from '../components/Rating';
 import Card from 'react-bootstrap/Card';
 import Badge from 'react-bootstrap/Badge';
@@ -13,6 +13,8 @@ import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import { getError } from '../utils';
 import { Store } from '../Store';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -55,14 +57,14 @@ function ProductScreen() {
     const quantity = existItem ? existItem.quantity + 1 : 1;
     const { data } = await axios.get(`/api/products/${product._id}`);
     if (data.countInStock < quantity) {
-      window.alert('Sorry, Product is out of stock');
+      toast.error('Sorry, Product is out of stock');
       return;
     }
     ctxDispatch({
       type: 'CART_ADD_ITEM',
       payload: { ...product, quantity },
     });
-    navigate('/cart')
+    navigate('/cart');
   };
 
   return loading ? (
@@ -71,6 +73,18 @@ function ProductScreen() {
     <MessageBox variant="danger">{error}</MessageBox>
   ) : (
     <div>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
       <Row>
         <Col md={6}>
           <img className="img-large" src={product.image} alt={product.name} />
@@ -85,7 +99,7 @@ function ProductScreen() {
             <ListGroup.Item>
               <Rating rating={product.rating} numReviews={product.numReviews} />
             </ListGroup.Item>
-            <ListGroup.Item>Price : ₹{' '}{product.price}</ListGroup.Item>
+            <ListGroup.Item>Price : ₹ {product.price}</ListGroup.Item>
             <ListGroup.Item>
               Description : <p>{product.description}</p>
             </ListGroup.Item>
@@ -98,7 +112,7 @@ function ProductScreen() {
                 <ListGroup.Item>
                   <Row>
                     <Col>Price:</Col>
-                    <Col>₹{' '}{product.price}</Col>
+                    <Col>₹ {product.price}</Col>
                   </Row>
                 </ListGroup.Item>
                 <ListGroup.Item>
