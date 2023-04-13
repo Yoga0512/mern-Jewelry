@@ -6,30 +6,30 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.site-container{
+.site-container {
   min-height: 100vh;
 }
 
-main{
+main {
   flex: 1;
 }
-.img-large{
+.img-large {
   max-width: 100%;
 }
-.btn-primary{
+.btn-primary {
   background-color: #f0c040;
   color: #000000;
 }
-.products{
+.products {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.rating span{
+.rating span {
   color: #ffc000;
 }
-.product{
+.product {
   border: #404040 solid 1px;
   padding: 1rem;
   margin: 1rem;
@@ -38,6 +38,10 @@ main{
    size: 679px * 829px; 
 
 } */
-.img-thumbnail{
+.img-thumbnail {
   height: 80px;
+}
+
+.small-container {
+  max-width: 600px;
 }
