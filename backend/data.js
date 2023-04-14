@@ -1,7 +1,7 @@
 const data = {
   products: [
     {
-      _id: '1',
+      // _id: '1',
       name: 'Gold-Floral-ring',
       slug: 'gold-floral-ring',
       category: 'rings',
@@ -13,7 +13,7 @@ const data = {
       description: 'Great design ring',
     },
     {
-      _id: '2',
+      // _id: '2',
       name: 'Gold-Heart-ring',
       slug: 'gold-heart-ring',
       category: 'rings',
@@ -25,7 +25,7 @@ const data = {
       description: 'Great design ring',
     },
     {
-      _id: '3',
+      // _id: '3',
       name: 'Gold-Daisy-ring',
       slug: 'gold-daisy-ring',
       category: 'rings',
@@ -37,7 +37,7 @@ const data = {
       description: 'Great design ring',
     },
     {
-      _id: '4',
+      // _id: '4',
       name: 'Gold-Ohm-ring',
       slug: 'gold-ohm-ring',
       category: 'rings',
