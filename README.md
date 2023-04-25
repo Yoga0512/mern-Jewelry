@@ -81,4 +81,8 @@
 21. Seed Sample Users
     1. create user model
     2. seed sample users
-    3. create user routes    
+    3. create user routes
+22. Create Signin Backend Api
+    1. create signin Api
+    2. npm install jsonwebtoken
+    3. define generateToken
