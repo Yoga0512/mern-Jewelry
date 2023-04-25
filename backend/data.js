@@ -1,4 +1,19 @@
+import bcrypt from 'bcryptjs';
 const data = {
+  users: [
+    {
+      name: "Yoga",
+      email: "admin@example.com",
+      password: bcrypt.hashSync('123456'),
+      isAdmin: true,
+    },
+    {
+      name: "Vaibhav",
+      email: "user@example.com",
+      password: bcrypt.hashSync('654321'),
+      isAdmin: false,
+    },
+  ],
   products: [
     {
       // _id: '1',
@@ -6,7 +21,7 @@ const data = {
       slug: 'gold-floral-ring',
       category: 'rings',
       image: '/images/ring1.jpg',
-      price: "3647.00",
+      price: '3647.00',
       countInStock: 10,
       rating: 4.5,
       numReviews: 10,
@@ -18,7 +33,7 @@ const data = {
       slug: 'gold-heart-ring',
       category: 'rings',
       image: '/images/ring2.jpg',
-      price: "2643.00",
+      price: '2643.00',
       countInStock: 0,
       rating: 3.0,
       numReviews: 10,
@@ -30,7 +45,7 @@ const data = {
       slug: 'gold-daisy-ring',
       category: 'rings',
       image: '/images/ring3.jpg',
-      price: "1999.00",
+      price: '1999.00',
       countInStock: 20,
       rating: 4.3,
       numReviews: 10,
@@ -42,7 +57,7 @@ const data = {
       slug: 'gold-ohm-ring',
       category: 'rings',
       image: '/images/ring4.jpg',
-      price: "2999.00",
+      price: '2999.00',
       countInStock: 10,
       rating: 3.7,
       numReviews: 8,
