@@ -18,6 +18,7 @@ import SignupScreen from './screens/SignupScreen';
 import PaymentMethodScreen from './screens/PaymentMethodScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import PriceScreen from './screens/PriceScreen';
+import OrderScreen from './screens/OrderScreen';
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const { cart, userInfo } = state;
@@ -70,9 +71,7 @@ function App() {
                   </Link>
                 )}
                 <Link to="/pricetracker" className="nav-link">
-                 Rates today
-                  
-            
+                  Rates today
                 </Link>
               </Nav>
             </Container>
@@ -90,7 +89,7 @@ function App() {
               <Route path="/payment" element={<PaymentMethodScreen />} />
               <Route path="/placeorder" element={<PlaceOrderScreen />} />
               <Route path="/pricetracker" element={<PriceScreen />} />
-
+              <Route path="/order/:id" element={<OrderScreen />} />
             </Routes>
           </Container>
         </main>
