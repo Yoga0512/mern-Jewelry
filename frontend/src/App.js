@@ -17,6 +17,7 @@ import ShippingAddressScreen from './screens/ShippingAddressScreen';
 import SignupScreen from './screens/SignupScreen';
 import PaymentMethodScreen from './screens/PaymentMethodScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
+import PriceScreen from './screens/PriceScreen';
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const { cart, userInfo } = state;
@@ -68,6 +69,11 @@ function App() {
                     Sign In
                   </Link>
                 )}
+                <Link to="/pricetracker" className="nav-link">
+                 Rates today
+                  
+            
+                </Link>
               </Nav>
             </Container>
           </Navbar>
@@ -83,6 +89,8 @@ function App() {
               <Route path="/shipping" element={<ShippingAddressScreen />} />
               <Route path="/payment" element={<PaymentMethodScreen />} />
               <Route path="/placeorder" element={<PlaceOrderScreen />} />
+              <Route path="/pricetracker" element={<PriceScreen />} />
+
             </Routes>
           </Container>
         </main>
