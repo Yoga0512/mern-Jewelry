@@ -12,7 +12,6 @@ const PAGE_SIZE = 3;
 productRouter.get(
   '/search',
   expressAsyncHandler(async (req, res) => {
-    console.log('called');
     const { query } = req;
     const pageSize = query.pageSize || PAGE_SIZE;
     const page = query.page || 1;
