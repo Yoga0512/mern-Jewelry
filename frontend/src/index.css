@@ -75,3 +75,14 @@ main {
 .active-nav{
   left:0;
 }
+.text-bold {
+  font-weight: bold;
+}
+/* .some{
+  border-radius: 2rem;
+  margin-top: 2rem;
+  margin-right: 8rem;
+  margin-left : 8rem;
+  border: 1px solid rgb(0,0,0,0.1);
+  box-shadow: 2px 2px 2px 2px rgb(0,0,0,0.1);
+} */

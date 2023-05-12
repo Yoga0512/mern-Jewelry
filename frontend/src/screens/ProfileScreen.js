@@ -77,7 +77,7 @@ export default function ProfileScreen() {
         <Form.Group className="mb-3" controlId="name">
           <Form.Label>Name</Form.Label>
           <Form.Control
-            value={name?({name}):(null)}
+            value={name}
             onChange={(e) => setName(e.target.value)}
             required
           />
