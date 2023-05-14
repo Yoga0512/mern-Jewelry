@@ -26,6 +26,7 @@ function Product(props) {
     });
   };
   return (
+    <div className='card_css'>
     <Card>
       <Link to={`/product/${product.slug}`}>
         <img className="card-img-top" src={product.image} alt={product.name} />
@@ -45,6 +46,7 @@ function Product(props) {
         )}
       </Card.Body>
     </Card>
+    </div>
   );
 }
 export default Product;

@@ -9,7 +9,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 .site-container {
-  min-height: 100vh;
+  min-height: 20vh;
 }
 
 main {
@@ -65,14 +65,16 @@ main {
   height: 100%;
   position: absolute;
   left: -300px;
-  background-color:#100901;
   transition: 0.5s;
+  color:black;
+  margin-top: 2rem;
 }
 .site-container{
   transition: 0.4s;
+ 
 }
 .active-cont{
-  margin-left:240px ;
+  margin-left:240px;
 }
 .active-nav{
   left:0;
@@ -81,10 +83,27 @@ main {
   font-weight: bold;
 }
 .menubar{
+  border:1px ;
   border-radius: 2rem;
   margin-top: 2rem;
-  margin-right: 6rem;
-  margin-left : 6rem;
-  border: 1px solid rgb(0,0,0,0.1);
+  margin-left: 2rem;
+  margin-right: 2rem;
+  border-radius: 25px;
   font-weight: bold;
+  color: rgb(230, 224, 224);
+}
+.card_css{
+  transition:0.5s;
+}
+.card_css:hover {
+  transform: scale(1.04);
+}
+.price_css{
+  text-align: center;
+  background-color: #e1e1e1;
+  border-radius: 25px;
+  margin-top:5%;
+  margin-left:20%;
+  margin-right:20%;
+  z-index: 4;
 }

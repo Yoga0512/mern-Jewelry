@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-
+import Button from 'react-bootstrap/esm/Button';
 export default function PriceScreen() {
   const [price, setPrice] = useState();
   useEffect(() => {
@@ -8,13 +8,13 @@ export default function PriceScreen() {
       setPrice(res.data.val[0]);
     }).catch((err)=>{console.log(err)})
   }, []);
-  const datas = price?.map((i) => (
-   <h4> {i}</h4>
+  const datas = price?.map((i) => (<>
+  <Button variant='dark' style={{width:"50%",margin:"10px"}}>{i}</Button> <br/></>
     
   ))
   return (
 
-    <div>
+    <div className='price_css'>
       {console.log("data - "+ price)}
       
       

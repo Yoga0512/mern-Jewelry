@@ -31,6 +31,7 @@ import AdminRoute from './components/AdminRoute';
 import DashBoardScreen from './screens/DashBoardScreen';
 import ProductListScreen from './screens/ProductListScreen';
 import ProductEditScreen from './screens/ProductEditScreen';
+import UserListScreen from './screens/UserListScreen';
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -69,7 +70,7 @@ function App() {
         {' '}
         <ToastContainer position="bottom-center" limit={1} />
         <header>
-          <Navbar className='menubar' bg="light" variant="light" expand="lg">
+          <Navbar className="menubar" bg="light" variant="light" expand="lg">
             <Container>
               <Button
                 variant="light"
@@ -84,14 +85,20 @@ function App() {
               <Navbar.Collapse id="basic-navbar-nav">
                 <SearchBox />
                 <Nav className="me-auto w-100 justify-content-end">
-                  <Link to="/cart" className="nav-link">
-                    Cart
-                    {cart.cartItems.length > 0 && (
-                      <Badge pill bg="danger">
-                        {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
-                      </Badge>
-                    )}
-                  </Link>
+                  {userInfo ? (
+                    <Link to="/cart" className="nav-link">
+                      Cart
+                      {cart.cartItems.length > 0 && (
+                        <Badge pill bg="danger">
+                          {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
+                        </Badge>
+                      )}
+                    </Link>
+                  ) : (
+                    <Link to="/cart" className="nav-link">
+                      Cart
+                    </Link>
+                  )}
                   {userInfo ? (
                     <NavDropdown title={userInfo.name} id="basic-nav-dropdown">
                       <LinkContainer to="/profile">
@@ -147,11 +154,12 @@ function App() {
         >
           <Nav className="flex-column text-white w-100 p-2">
             <Nav.Item>
-              <strong>Categories</strong>
+              <strong style={{ color: 'black' }}>Categories</strong>
             </Nav.Item>
             {categories.map((category) => (
               <Nav.Item key={category}>
                 <LinkContainer
+                  style={{ color: 'black' }}
                   to={{ pathname: `/search`, search: `?category=${category}` }}
                   // to={`/search/category=${category}`}
                   onClick={() => setSidebarIsOpen(false)}
@@ -165,7 +173,14 @@ function App() {
         <main>
           <Container className="mt-3">
             <Routes>
-              <Route path="/cart" element={<CartScreen />} />
+              <Route
+                path="/cart"
+                element={
+                  <ProtectedRoute>
+                    <CartScreen />
+                  </ProtectedRoute>
+                }
+              />
               <Route path="/signin" element={<SigninScreen />} />
               <Route path="/signup" element={<SignupScreen />} />
               <Route path="/" element={<HomeScreen />} />
@@ -209,7 +224,7 @@ function App() {
                   </AdminRoute>
                 }
               />
-               <Route
+              <Route
                 path="/admin/products"
                 element={
                   <AdminRoute>
@@ -222,6 +237,14 @@ function App() {
                 element={
                   <AdminRoute>
                     <ProductEditScreen />
+                  </AdminRoute>
+                }
+              ></Route>
+              <Route
+                path="/admin/users"
+                element={
+                  <AdminRoute>
+                    <UserListScreen />
                   </AdminRoute>
                 }
               ></Route>
